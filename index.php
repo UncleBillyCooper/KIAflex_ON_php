@@ -30,21 +30,6 @@ $TemplateOrderSK = new \PhpOffice\PhpWord\TemplateProcessor('skoringOrderSK.docx
 
 //Загружаем данные формы
 
-// $surname = 'Вашурин';
-// $firstname = 'Илья';
-// $fathername = 'Александрович';
-// $birthday = '29.03.1981';
-// $phonenumber = '+79231163294';
-// $pasportSeries = '0103';
-// $pasportNum = '406397';
-// $issueDatePas = '17.10.2002';
-// $pasportDivisionCode = '222-010';
-// $DDseries = '9927';
-// $ddNum = '966292';
-// $issueDateDD = '29.07.2022';
-// $deadlineDateDD = '29.07.2032';
-// $startDrivingYear = '2012';
-// $homeRegion = '54';
 
 $surname = $_POST['input-surname'];
 $firstname = $_POST['input-firstname'];
@@ -80,7 +65,7 @@ $TemplateCheckList->setValue('fathername', $fathername);
 
 $curl = curl_init();
 curl_setopt_array($curl, array(
-  CURLOPT_URL => "https://api-cloud.ru/api/mvd.php?type=chekpassport&seria={$pasportSeries}&nomer={$pasportNum}&token=558dbccf616019b7e643dd6b36adefa0",
+  CURLOPT_URL => "https://api-cloud.ru/api/mvd.php?type=chekpassport&seria={$pasportSeries}&nomer={$pasportNum}&token=#############",//Токен можно получить тут https://api-cloud.ru/mvd
   CURLOPT_RETURNTRANSFER => true,
   CURLOPT_ENCODING => '',
   CURLOPT_MAXREDIRS => 10,
@@ -106,7 +91,7 @@ if(array_key_exists('status', $mvd)){
 
 
 curl_setopt_array($curl, array(
-  CURLOPT_URL => "https://api-cloud.ru/api/gibdd.php?type=driver&serianomer={$fullDDnum}&date={$issueDateDD}&token=558dbccf616019b7e643dd6b36adefa0",
+  CURLOPT_URL => "https://api-cloud.ru/api/gibdd.php?type=driver&serianomer={$fullDDnum}&date={$issueDateDD}&token=#############",//Токен можно получить тут https://api-cloud.ru/mvd
   CURLOPT_RETURNTRANSFER => true,
   CURLOPT_ENCODING => '',
   CURLOPT_MAXREDIRS => 10,
@@ -139,7 +124,7 @@ if(array_key_exists('doc', $gibddArr)){
 
 
 curl_setopt_array($curl, array(
-  CURLOPT_URL => "https://api-cloud.ru/api/rsa.php?type=kbm&surname='.urlencode($surname)'&name='.urlencode($firstname)'&patronymic='.urlencode($fathername)'&birthday={$birthday}&driverDocSeries='.urlencode($DDseries)'&driverDocNumber='.urlencode($ddNum)'&token=558dbccf616019b7e643dd6b36adefa0",
+  CURLOPT_URL => "https://api-cloud.ru/api/rsa.php?type=kbm&surname='.urlencode($surname)'&name='.urlencode($firstname)'&patronymic='.urlencode($fathername)'&birthday={$birthday}&driverDocSeries='.urlencode($DDseries)'&driverDocNumber='.urlencode($ddNum)'&token=#############",//Токен можно получить тут https://api-cloud.ru/mvd
   CURLOPT_RETURNTRANSFER => true,
   CURLOPT_ENCODING => '',
   CURLOPT_MAXREDIRS => 10,
@@ -175,7 +160,7 @@ if (array_key_exists('kbmValue', $rsa)) {
 
 $fio = urlencode($surname.' '.$firstname.' '.$fathername);
 curl_setopt_array($curl, array(
-  CURLOPT_URL => "https://api-cloud.ru/api/bankrot.php?type=searchString&string={$fio}&legalStatus=fiz&token=558dbccf616019b7e643dd6b36adefa0",
+  CURLOPT_URL => "https://api-cloud.ru/api/bankrot.php?type=searchString&string={$fio}&legalStatus=fiz&token=#############",//Токен можно получить тут https://api-cloud.ru/mvd
   CURLOPT_RETURNTRANSFER => true,
   CURLOPT_ENCODING => '',
   CURLOPT_MAXREDIRS => 10,
@@ -203,7 +188,7 @@ if(array_key_exists('status', $fedresurs)){
 
 
 curl_setopt_array($curl, array(
-  CURLOPT_URL => "https://api-cloud.ru/api/fssp.php?type=physical&lastname={$surname}&firstname={$firstname}&region={$homeRegion}&token=558dbccf616019b7e643dd6b36adefa0",
+  CURLOPT_URL => "https://api-cloud.ru/api/fssp.php?type=physical&lastname={$surname}&firstname={$firstname}&region={$homeRegion}&token=#############",//Токен можно получить тут https://api-cloud.ru/mvd
   CURLOPT_RETURNTRANSFER => true,
   CURLOPT_ENCODING => '',
   CURLOPT_MAXREDIRS => 10,
