@@ -1,0 +1,250 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>'Эксперемент с email'</title>
+    <link rel="stylesheet" href="/style.css">
+</head>
+<body>
+    <form class="form" method="post" action="index.php">
+        <h1>Анкета клиента</h1>
+        <div class="main-container">
+          <div class="surename input">
+            <label for="input-surname">фамилия</label>
+            <input type="text" id="input-surname" name="input-surname" placeholder="Фамилия" required/>
+          </div>
+          <div class="firstname input">
+            <label for="input-firstname">имя</label>
+            <input type="text" id="input-firstname" name="input-firstname" placeholder="Имя" required/>
+          </div>
+          <div class="fathername input">
+            <label for="input-fathername">отчество</label>
+            <input type="text" id="input-fathername" name="input-fathername" placeholder="Отчество" required/>
+          </div>
+          <div class="birthday input">
+            <label for="input-birthday">Дата и год рождения</label>
+            <input
+              type="text"
+              id="input-birthday"
+              name="input-birthday"
+              placeholder="Введите дату в формате ДД.ММ.ГГГГ"
+              pattern="^\d{2}\.\d{2}\.\d{4}$"
+              required
+            />
+          </div>
+          <h2>***</h2>
+          <div class="phonenumber input">
+            <label for="input-phonenumber">номер телефона</label>
+            <input
+              type="text"
+              pattern="^((\+7)+([0-9]){10})$"
+              id="input-phonenumber"
+              name="input-phonenumber"
+              placeholder="Введите номер телефона в формате +7**********"
+              required
+            />
+          </div>
+        </div>
+        <div class="second-containet">
+          <div class="pasport">
+            <h3>Паспорт</h3>
+            <div class="series input">
+              <label for="input-series">серия паспорта</label>
+              <input
+                type="text"
+                id="input-series"
+                name="input-series"
+                pattern="^\d{4}$"
+                placeholder="Введите серию паспорта без пробелов"
+                required
+              />
+            </div>
+            <div class="pasportNum input">
+              <label for="input-pasportNum">номер паспорта</label>
+              <input
+                type="text"
+                id="input-pasportNum"
+                name="input-pasportNum"
+                pattern="^\d{6}$"
+                placeholder="Введите номер паспорта без пробелов"
+                required
+              />
+            </div>
+            <div class="issueDatePas input">
+              <label for="input-issueDatePas">Дата выдачи</label>
+              <input
+                type="text"
+                id="input-issueDatePas"
+                name="input-issueDatePas"
+                placeholder="Введите дату в формате ДД.ММ.ГГГГ"
+                pattern="^\d{2}\.\d{2}\.\d{4}$"
+                required
+              />
+            </div>
+            <div class="divisionCode input">
+              <label for="input-divisionCode">код подразделения</label>
+              <input
+                type="text"
+                id="input-divisionCode"
+                name="input-divisionCode"
+                pattern="^\d{3}-\d{3}$"
+                placeholder="Код подразделения в формате NNN-NNN"
+                required
+              />
+            </div>
+            <div class="region dropdown">
+              <label for="input-region">регион</label>
+              <select type="text" id="input-region" name="input-region" required>
+                <option disabled selected>
+                  Выберетете регион проживания</option
+                >
+                <option value="01">Республика Адыгея</option>
+                <option value="02">Республика Башкортостан</option>
+                <option value="03">Республика Бурятия</option>
+                <option value="04">Республика Алтай</option>
+                <option value="05">Республика Дагестан</option>
+                <option value="06">Республика Ингушетия</option>
+                <option value="07">Кабардино-Балкарская республика</option>
+                <option value="08">Республика Калмыкия</option>
+                <option value="09">Республика Карачаево-Черкесия</option>
+                <option value="10">Республика Карелия</option>
+                <option value="11">Республика Коми</option>
+                <option value="12">Республика Марий Эл</option>
+                <option value="13">Республика Мордовия</option>
+                <option value="14">Республика Саха (Якутия)</option>
+                <option value="15">Республика Северная Осетия-Алания</option>
+                <option value="16">Республика Татарстан</option>
+                <option value="17">Республика Тыва</option>
+                <option value="18">Удмуртская Республика</option>
+                <option value="19">Республика Хакасия</option>
+                <option value="20">Чеченская Республика</option>
+                <option value="21">Чувашская республика</option>
+                <option value="22">Алтайский край</option>
+                <option value="23">Краснодарский край</option>
+                <option value="24">Красноярский край</option>
+                <option value="25">Приморский край</option>
+                <option value="26">Ставропольский край</option>
+                <option value="27">Хабаровский край</option>
+                <option value="28">Амурская область</option>
+                <option value="29">Архангельская область</option>
+                <option value="30">Астраханская область</option>
+                <option value="31">Белгородская область</option>
+                <option value="32">Брянская область</option>
+                <option value="33">Владимирская область</option>
+                <option value="34">Волгоградская область</option>
+                <option value="35">Вологодская область</option>
+                <option value="36">Воронежская область</option>
+                <option value="37">Ивановская область</option>
+                <option value="38">Иркутская область</option>
+                <option value="39">Калининградская область</option>
+                <option value="40">Калужская область</option>
+                <option value="41">Камчатский край</option>
+                <option value="42">Кемеровская область</option>
+                <option value="43">Кировская область</option>
+                <option value="44">Костромская область</option>
+                <option value="45">Курганская область</option>
+                <option value="46">Курская область</option>
+                <option value="47">Ленинградская область</option>
+                <option value="48">Липецкая область</option>
+                <option value="49">Магаданская область</option>
+                <option value="50">Московская область</option>
+                <option value="51">Мурманская область</option>
+                <option value="52">Нижегородская область</option>
+                <option value="53">Новгородская область</option>
+                <option value="54">Новосибирская область</option>
+                <option value="55">Омская область</option>
+                <option value="56">Оренбургская область</option>
+                <option value="57">Орловская область</option>
+                <option value="58">Пензенская область</option>
+                <option value="59">Пермский край</option>
+                <option value="60">Псковская область</option>
+                <option value="61">Ростовская область</option>
+                <option value="62">Рязанская область</option>
+                <option value="63">Самарская область</option>
+                <option value="64">Саратовская область</option>
+                <option value="65">Сахалинская область</option>
+                <option value="66">Свердловская область</option>
+                <option value="67">Смоленская область</option>
+                <option value="68">Тамбовская область</option>
+                <option value="69">Тверская область</option>
+                <option value="70">Томская область</option>
+                <option value="71">Тульская область</option>
+                <option value="72">Тюменская область</option>
+                <option value="73">Ульяновская область</option>
+                <option value="74">Челябинская область</option>
+                <option value="75">Читинская область</option>
+                <option value="76">Ярославская область</option>
+                <option value="77">город Москва</option>
+                <option value="78">город Санкт-Петербург</option>
+                <option value="86">Ханты-Мансийский автономный округ-Югра</option>
+                <option value="89">Ямало-Ненецкий автономный округ</option>
+                <option value="92">город Севастополь</option>
+              </select>
+            </div>
+          </div>
+          <div class="drivedocs">
+            <h3>Водительское удостоверение (ВУ)</h3>
+            <div class="series-dd input">
+              <label for="input-DDseries">серия ВУ</label>
+              <input
+                type="text"
+                id="input-DDseries"
+                name="input-DDseries"
+                placeholder="Введите серию ВУ без пробелов"
+                pattern="^\d{4}$"
+                required
+              />
+            </div>
+            <div class="ddNum input">
+              <label for="input-ddNum">номер ВУ</label>
+              <input
+                type="text"
+                id="input-ddNum"
+                name="input-ddNum"
+                placeholder="Введите номер ВУ без пробелов"
+                pattern="^\d{6}$"
+                required
+              />
+            </div>
+            <div class="issueDateDD input">
+              <label for="input-issueDateDD">Дата выдачи ВУ</label>
+              <input
+                type="text"
+                id="input-issueDateDD"
+                name="input-issueDateDD"
+                placeholder="Введите дату в формате ДД.ММ.ГГГГ"
+                pattern="^\d{2}\.\d{2}\.\d{4}$"
+                required
+              />
+            </div>
+            <div class="deadlineDate input">
+              <label for="input-deadlineDate">Срок действия ВУ</label>
+              <input
+                type="text"
+                id="input-deadlineDate"
+                name="input-deadlineDate"
+                placeholder="Введите дату в формате ДД.ММ.ГГГГ"
+                pattern="^\d{2}\.\d{2}\.\d{4}$"
+                required
+              />
+            </div>
+            <div class="startDrivingYear input">
+              <label for="input-startDrivingYear"
+                >Год начала водительского стажа</label
+              >
+              <input
+                type="text"
+                id="input-startDrivingYear"
+                name="input-startDrivingYear"
+                placeholder="Введите год в формате ГГГГ"
+                pattern="^\d{4}$"
+                required
+              />
+            </div>
+          </div>
+        </div>
+        <button type="submit" class="btn">Отправить данные</button>
+      </form>
+</body>
+</html>
